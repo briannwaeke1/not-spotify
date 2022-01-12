@@ -1,5 +1,5 @@
 const clientId = 'fc40c6c8fb9942f280df567372858169';
-const redirectUri = 'http://www.notspotify.tech';
+const redirectUri = 'https://www.notspotify.tech/';
 
 let accessToken;
 
