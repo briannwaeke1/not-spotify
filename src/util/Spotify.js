@@ -53,7 +53,45 @@ const Spotify = {
 
             }));
         })
+    },
+
+    // method accepts a playlist name and an array of track URIs
+    savePlaylist(name, trackUris) {
+         if (!name || !trackUris.length) {
+             return;
+         }   
+
+         const accessToken = Spotify.getAccessToken();
+         const headers = { Authorization: `Bearer ${accessToken}`}
+         let userId;
+         // Make a request that returns the user’s Spotify username. Convert the response to JSON and save the response id parameter to the user’s ID variable.
+         return fetch('https://api.spotify.com/v1/me', { headers: headers }
+         ).then(response => response.json()
+         ).then(jsonResponse => {
+             userId = jsonResponse.id;
+             // Use the returned user ID to make a POST request that creates a new playlist in the user’s account and returns a playlist ID.
+             return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`,
+             {
+                 headers: headers,
+                 method: 'POST',
+                 // body the playlist name to the value passed into the method.
+                 body: JSON.stringify({name: name})
+                 // Convert the response to JSON and save the response id parameter to a variable called playlistID
+             }).then(response => response.json()
+             ).then(jsonResponse => {
+                 const playlistId = jsonResponse.id;
+                 return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, 
+                 {
+                    headers: headers,
+                    method: 'POST',
+                    // body the URIs parameter to an array of track URIs passed into the method.
+                    body: JSON.stringify({uris: trackUris})
+                 })
+             })
+         })
     }
+
+
 }
 
 
