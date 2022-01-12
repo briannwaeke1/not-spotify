@@ -1,5 +1,5 @@
 const clientId = 'fc40c6c8fb9942f280df567372858169';
-const redirectUri = 'http://localhost:3000';
+const redirectUri = 'http://localhost:3000/';
 
 let accessToken;
 
@@ -24,7 +24,7 @@ const Spotify = {
             window.history.pushState('Access Token', null, '/');
             return accessToken;
         } else {
-            const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`
+            const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
             window.location = accessUrl;
         }
     },
@@ -47,12 +47,12 @@ const Spotify = {
             return jsonResponse.tracks.items.map(track => ({
                 id: track.id,
                 name: track.name,
-                artist: track.artists[0].name,
+                artists: track.artists[0].name,
                 album: track.album.name,
                 uri: track.uri
 
             }));
-        })
+        });
     },
 
     // method accepts a playlist name and an array of track URIs
@@ -62,7 +62,7 @@ const Spotify = {
          }   
 
          const accessToken = Spotify.getAccessToken();
-         const headers = { Authorization: `Bearer ${accessToken}`}
+         const headers = {Authorization: `Bearer ${accessToken}`};
          let userId;
          // Make a request that returns the user’s Spotify username. Convert the response to JSON and save the response id parameter to the user’s ID variable.
          return fetch('https://api.spotify.com/v1/me', { headers: headers }
@@ -74,9 +74,7 @@ const Spotify = {
              {
                  headers: headers,
                  method: 'POST',
-                 // body the playlist name to the value passed into the method.
                  body: JSON.stringify({name: name})
-                 // Convert the response to JSON and save the response id parameter to a variable called playlistID
              }).then(response => response.json()
              ).then(jsonResponse => {
                  const playlistId = jsonResponse.id;
@@ -84,7 +82,6 @@ const Spotify = {
                  {
                     headers: headers,
                     method: 'POST',
-                    // body the URIs parameter to an array of track URIs passed into the method.
                     body: JSON.stringify({uris: trackUris})
                  })
              })

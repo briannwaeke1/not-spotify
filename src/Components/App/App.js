@@ -14,7 +14,8 @@ class App extends React.Component {
       searchResults: [],
       playlistName: 'My Playlist',
       playlistTracks: []
-    }
+    };
+
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
@@ -54,7 +55,7 @@ class App extends React.Component {
   // Update the state of searchResults with the value resolved from Spotify.search()‘s promise.
   search(term) {
     Spotify.search(term).then(searchResults => {
-      this.setState({SearchResults: SearchResults});
+      this.setState({ searchResults: searchResults })
     })
   }
 
