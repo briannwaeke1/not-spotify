@@ -3,6 +3,7 @@ import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
+import Spotify from '../../util/Spotify';
 
 
 
@@ -48,8 +49,11 @@ class App extends React.Component {
     const trackURIs = this.state.playlistTracks.map(track => track.uri);
   }
 
+  // Update the state of searchResults with the value resolved from Spotify.search()‘s promise.
   search(term) {
-    console.log(term);
+    Spotify.search(term).then(searchResults => {
+      this.setState({SearchResults: SearchResults})
+    })
   }
   
   render() {
