@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Not-Spotify
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Not-Spotify is a website that allows users to search the Spotify library, create a custom playlist, then save it to their Spotify account.
 
-## Available Scripts
+## Implementation
+- This project was created to showcase my ability working with class components, working with state and props, working with a APIs 
+- Fetch API used to get track data from Spotify library
+- Hosted at www.notspotify.tech
+- Deployed using Netlify
 
-In the project directory, you can run:
+### Stack
+- React.js
+- CSS
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Search  
+1. Enter a song title or artist name in the search bar, and click the SEARCH button to complete a request to the Spotify library to receive a response from the Spotify API, updating "Results" with the results from a Spotify request.
+<img width="640" alt="Screen Shot 2022-01-19 at 4 39 21 PM" src="https://user-images.githubusercontent.com/94656081/150241563-356bd2ff-ae5c-4792-8416-dd543de8faf0.png">
 
-### `npm test`
+### Search Results
+1. Click the + sign to add a track from the search results to your playlist.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Playlist
+1. Change the name of your new playlist (or leave the default "New Playlist").
+2. Click the - sign to remove tracks from your playlist.
+3. Click "SAVE TO SPOTIFY" button to save to your personal Spotify account.
+<img width="640" alt="Screen Shot 2022-01-19 at 4 40 21 PM" src="https://user-images.githubusercontent.com/94656081/150241679-f9b85630-d216-4200-9a16-ad97ffabee4b.png">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+PLEASE NOTE - Not-Spotify is in "Development Mode" with the Spotigy Web API
+Up to 25 Spotify users can use Not-Spotify. These users must be explicitly added under the section "Users and Access" in my Spotify Developer Account before they can authenticate with Not-Spotify.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once a user has been added to my list of authorized users, they will be able use the search feature in Not-Spotify and add playlists to their Spotify account. 
+Once a user attempts to search in Not-Spotify they will redirected to Spotify to log in to Spotify account
+![IMG_7135](https://user-images.githubusercontent.com/94656081/150241014-5ac88b85-918e-4992-a2d3-7b1cd182668a.PNG)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![IMG_7134](https://user-images.githubusercontent.com/94656081/150240611-dd02ac02-4bca-44ed-8999-fd9652f12cff.PNG)
