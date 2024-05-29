@@ -2,12 +2,6 @@
 
 Not-Spotify is a website that allows users to search the Spotify library, create a custom playlist, then save it to their Spotify account.
 
-## Implementation
-- This project was created to showcase my ability working with class components, working with state and props, working with a APIs 
-- Fetch API used to get track data from Spotify library
-- Hosted at www.notspotify.tech
-- Deployed using Netlify
-
 ### Stack
 - React.js
 - CSS
